@@ -1,0 +1,60 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mousun.jupigoproject.Fragment_Tab_One"
+    android:id="@+id/tabs_1_layout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/ColorButton"
+            android:layout_width = "150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:text="Select Coror"
+            android:background="@color/colorPrimary"
+            android:textColor ="@android:color/white" />
+
+        <EditText
+            android:id="@+id/Code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ColorButton"
+            android:layout_marginTop="65dp"
+            android:inputType="numberDecimal"
+            android:hint="Enter a 4 Digits Code"
+            android:maxLength="4"/>
+
+        <EditText
+            android:id="@+id/UserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Code"
+            android:layout_marginTop="65dp"
+            android:hint="Enter a Name" />
+
+        <Button
+            android:id="@+id/SubmitBtn"
+            android:layout_width = "150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:text="Submit"
+            android:layout_below="@+id/UserName"
+            android:enabled="false"
+            android:background="@android:color/darker_gray"
+            android:textColor ="@android:color/white" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>

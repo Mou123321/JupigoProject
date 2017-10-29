@@ -1,0 +1,48 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mousun.jupigoproject.Fragment_User_Profile">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:textSize="25dp"
+            />
+
+        <TextView
+            android:id="@+id/profile_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="code"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:layout_below="@+id/profile_name"
+            android:textSize="25dp"
+
+            />
+
+        <TextView
+            android:id="@+id/profile_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="color"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:layout_below="@+id/profile_code"
+            android:textSize="25dp"
+
+            />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mousun.jupigoproject.Fragment_Tab_Three"
+    android:id="@+id/tab_three_layout">
+
+    <ListView
+        android:id="@+id/list_tab_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:background="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="lol"
+            android:id="@+id/tv1_tab_3"
+            android:visibility="invisible"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wow"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/tv2_tab_3"
+            android:visibility="invisible"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
