@@ -10,11 +10,16 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -26,13 +31,9 @@ import java.util.ArrayList;
  */
 public class Fragment_Tab_Three extends Fragment {
 
-    public static ArrayList<String> mUserNameList;
-
-    public static ArrayAdapter<String> mUserNameListAdapter;
-
-    ListView mListView;
-
-    TextView tv_1, tv_2;
+    public static ExpandableListView listView;
+    public static ExpandableListAdapter listAdapter;
+    public static HashMap<String, List<String>> listHashMap;
 
     Communicater communicater;
 
@@ -46,30 +47,24 @@ public class Fragment_Tab_Three extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragment_tab_three, container, false);
-        mUserNameList = new ArrayList<String>();
 
         communicater = (Communicater) getActivity();
 
-        mListView = (ListView) view.findViewById(R.id.list_tab_3);
+        listView = (ExpandableListView) view.findViewById(R.id.lvExp);
 
-        tv_1 = (TextView) view.findViewById(R.id.tv1_tab_3);
-        tv_2 = (TextView) view.findViewById(R.id.tv2_tab_3);
+        listHashMap = new HashMap<>();
 
-        mUserNameListAdapter = new ArrayAdapter<String>(getActivity(),R.layout.list_single_item , R.id.list_item_tv, mUserNameList);
 
-        mListView.setAdapter(mUserNameListAdapter);
+        listView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            int preiousGroup = -1;
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               UserObject clickedUser = communicater.getClickedUser(position);
+            public void onGroupExpand(int groupPosition) {
 
-               tv_1.setText("Color: " + clickedUser.getUesr_color());
-               tv_2.setText("Code: " + clickedUser.getUser_code());
-
-               tv_1.setVisibility(View.VISIBLE);
-               tv_2.setVisibility(View.VISIBLE);
-
+                if (groupPosition != preiousGroup){
+                    listView.collapseGroup(preiousGroup);
+                }
+                preiousGroup = groupPosition;
             }
         });
 

@@ -114,6 +114,7 @@ public class Fragment_Tab_One extends Fragment implements TextWatcher{
                             mColorBtn.setText(mSting);
                         }else {
                             selectColorFlag = false;
+                            mColorBtn.setText("Select a Color");
                         }
 
                     }

@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /*
@@ -68,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements Communicater{
         mUserNameList.add(name);
         f_list_name = new Fragment_List_Name(mUserNameList);
 
+        List<String> temp_1 = new ArrayList<>();
+        temp_1.add(String.valueOf(code));
+        temp_1.add(color);
+        Fragment_Tab_Three.listHashMap.put(name, temp_1);
+
+
         updateTabThree();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -101,9 +109,11 @@ public class MainActivity extends AppCompatActivity implements Communicater{
      */
     @Override
     public void updateTabThree() {
-        Fragment_Tab_Three.mUserNameList.clear();
-        Fragment_Tab_Three.mUserNameList.addAll(mUserNameList);
-        Fragment_Tab_Three.mUserNameListAdapter.notifyDataSetChanged();
+        //Fragment_Tab_Three.listHashMap = new HashMap<>();
+
+        Fragment_Tab_Three.listAdapter = new EapandableListAdapter(this, mUserNameList, Fragment_Tab_Three.listHashMap);
+
+        Fragment_Tab_Three.listView.setAdapter(Fragment_Tab_Three.listAdapter);
     }
 
     /*
