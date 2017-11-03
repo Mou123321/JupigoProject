@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity implements Communicater{
         f_list_name = new Fragment_List_Name(mUserNameList);
 
         List<String> temp_1 = new ArrayList<>();
-        temp_1.add(String.valueOf(code));
-        temp_1.add(color);
+        temp_1.add("Color: "+color);
+        temp_1.add("Code " +String.valueOf(code));
         Fragment_Tab_Three.listHashMap.put(name, temp_1);
 
 
